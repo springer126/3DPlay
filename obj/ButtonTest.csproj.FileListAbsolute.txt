@@ -1,0 +1,17 @@
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ButtonTest.Form1.resources
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ButtonTest.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ButtonTest.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\bin\Debug\ButtonTest.exe
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\bin\Debug\ButtonTest.pdb
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ButtonTest.exe
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ButtonTest.pdb
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\bin\Debug\Interop.MCI.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\Interop.MCI.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\ButtonTest\obj\Debug\ButtonTest.csproj.ResolveComReference.cache
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\ButtonTest.exe
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\ButtonTest.pdb

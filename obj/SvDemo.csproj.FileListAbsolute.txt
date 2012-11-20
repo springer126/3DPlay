@@ -1,0 +1,51 @@
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\bin\Debug\Interop.MCI.dll
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\Interop.MCI.dll
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\SvDemo.csproj.ResolveComReference.cache
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\ButtonTest.Form1.resources
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\SvDemo.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\SvDemo.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\bin\Debug\SvDemo.exe
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\bin\Debug\SvDemo.pdb
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\SvDemo.exe
+C:\Documents and Settings\Administrator\桌面\柳先辉_3D演示\ButtonTest\ButtonTest\obj\Debug\SvDemo.pdb
+I:\ButtonTest\ButtonTest\obj\Debug\SvDemo.exe
+I:\ButtonTest\ButtonTest\obj\Debug\SvDemo.pdb
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.exe
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.pdb
+L:\ButtonTest_bak\ButtonTest\bin\Debug\SvDemo.exe
+L:\ButtonTest_bak\ButtonTest\bin\Debug\SvDemo.pdb
+L:\ButtonTest_bak\ButtonTest\bin\Debug\Interop.MCI.dll
+L:\ButtonTest_bak\ButtonTest\bin\Debug\Interop.ShockwaveFlashObjects.dll
+L:\ButtonTest_bak\ButtonTest\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+L:\ButtonTest_bak\ButtonTest\obj\Debug\ResolveAssemblyReference.cache
+L:\ButtonTest_bak\ButtonTest\obj\Debug\Interop.MCI.dll
+L:\ButtonTest_bak\ButtonTest\obj\Debug\Interop.ShockwaveFlashObjects.dll
+L:\ButtonTest_bak\ButtonTest\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.csproj.ResolveComReference.cache
+L:\ButtonTest_bak\ButtonTest\obj\Debug\ButtonTest.Form1.resources
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.Form2.resources
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.Form3.resources
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.Properties.Resources.resources
+L:\ButtonTest_bak\ButtonTest\obj\Debug\SvDemo.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.exe
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.pdb
+C:\Documents and Settings\Administrator\桌面\ButtonTest\bin\Debug\SvDemo.exe
+C:\Documents and Settings\Administrator\桌面\ButtonTest\bin\Debug\SvDemo.pdb
+C:\Documents and Settings\Administrator\桌面\ButtonTest\bin\Debug\Interop.MCI.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\Interop.MCI.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.csproj.ResolveComReference.cache
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\ButtonTest.Form1.resources
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.Form2.resources
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.Form3.resources
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.csproj.GenerateResource.Cache
