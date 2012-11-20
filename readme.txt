@@ -1,1 +1,0 @@
-this is program for 3d play
