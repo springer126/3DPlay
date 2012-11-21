@@ -40,49 +40,6 @@ namespace ButtonTest
             InitializeComponent();
             this.MaximizeBox = false;
             xmlViewData = null;
-            int count =20;
-            float[] factor = new float[count];
-            int n = 0;
-            factor[n++] = Size.Width;
-            factor[n++] = Size.Height;
-  
-            factor[n++] = this.groupBox2.Location.X / (float)Size.Width;
-            factor[n++] = this.groupBox2.Location.Y / (float)Size.Height;
-            this.groupBox2.Tag = this.groupBox2.Size;
-
-            factor[n++] = this.pictureBox1.Location.X / (float)Size.Width;
-            factor[n++] = this.pictureBox1.Location.Y / (float)Size.Height;
-            this.pictureBox1.Tag = this.pictureBox1.Size;
-
-            factor[n++] = this.axShockwaveFlash1.Location.X / (float)Size.Width;
-            factor[n++] = this.axShockwaveFlash1.Location.Y / (float)Size.Height;
-            this.axShockwaveFlash1.Tag = this.axShockwaveFlash1.Size;
-
-            factor[n++] = this.vScrollBar1.Location.X / (float)Size.Width;
-            factor[n++] = this.vScrollBar1.Location.Y / (float)Size.Height;
-            this.vScrollBar1.Tag = this.vScrollBar1.Size;
-
-            factor[n++] = this.button1.Location.X / (float)Size.Width;
-            factor[n++] = this.button1.Location.Y / (float)Size.Height;
-            this.button1.Tag = this.button1.Size;
-
-            factor[n++] = this.button2.Location.X / (float)Size.Width;
-            factor[n++] = this.button2.Location.Y / (float)Size.Height;
-            this.button2.Tag = this.button2.Size;
-
-            factor[n++] = this.status.Location.X / (float)Size.Width;
-            factor[n++] = this.status.Location.Y / (float)Size.Height;
-            this.status.Tag = this.status.Size;
-
-            factor[n++] = this.time.Location.X / (float)Size.Width;
-            factor[n++] = this.time.Location.Y / (float)Size.Height;
-            this.time.Tag = this.time.Size;
-
-            factor[n++] = this.score.Location.X / (float)Size.Width;
-            factor[n++] = this.score.Location.Y / (float)Size.Height;
-            this.score.Tag = this.score.Size;
-
-            Tag = factor;
         }
 
         private void OnMouseDown(object sender, MouseEventArgs e)
@@ -90,7 +47,8 @@ namespace ButtonTest
 
             if (errorCount < 5)
             {
-                Button bt = sender as Button;
+                MyButton bt = sender as MyButton;
+                //ShakeButton(bt);
                 btnStart = Cursor.Position;
                 btnOrigin = bt.Location;
                 bMouseDown = true;
@@ -103,18 +61,20 @@ namespace ButtonTest
                 {
                     ControlTrans(pictureBox1, pictureBox1.BackgroundImage);
                     ControlTrans(bt, bt.BackgroundImage);
-
-                    bt.Location = new Point(Cursor.Position.X - this.Location.X - 60, Cursor.Position.Y - this.Location.Y - 60);
+                    int left  = Cursor.Position.X - this.Location.X - 60;
+                    int top = Cursor.Position.Y - this.Location.Y - 60;
+                    //if (left > axShockwaveFlash1.Left && top > axShockwaveFlash1.Top &&
+                    //    left < axShockwaveFlash1.Left + axShockwaveFlash1.Width &&
+                    //    top < axShockwaveFlash1.Top + axShockwaveFlash1.Height) 
+                    //{
+                    //    bt.Size = new Size(120,90);
+                    //    bt.Refresh();
+                    //}
+                    bt.Location = new Point(left,top);
                     Application.DoEvents();
                 }
             }  
         }
-
-        private void OnMouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
 
         private void GetButtonLoction(Button btn)
         {
@@ -129,18 +89,14 @@ namespace ButtonTest
             {
                 bMouseDown = false;
 
-                Button btn = sender as Button;
+                MyButton btn = sender as MyButton;
                 Point pos = btn.Location;
                 int x = pos.X + 28;
                 int y = pos.Y + 18;
-                //MessageBox.Show("Point Location:"+x+","+y);
                 int leftupx = Convert.ToInt32(xmlViewData[btn_order]["leftupx"].ToString());
                 int leftupy = Convert.ToInt32(xmlViewData[btn_order]["leftupy"].ToString());
                 int rightbottomx = Convert.ToInt32(xmlViewData[btn_order]["rightbottomx"].ToString());
                 int rightbottomy = Convert.ToInt32(xmlViewData[btn_order]["rightbottomy"].ToString());
-
-                //MessageBox.Show("" + leftupx + " " + leftupy + " " + rightbottomx + " " + rightbottomy);
-
                 btn.Location = btnOrigin;
 
                 if (btn_order != this.order)
@@ -148,7 +104,7 @@ namespace ButtonTest
                     scores -= 10;
                     score.Text = "得分：" + scores;
                     errorCount++;
-                    msg.Text += "\n"+errorCount+": 组合次序错误";
+                    msg.Text += "\n"+errorCount+": 组装次序错误";
                 }
                 else if (x > leftupx && x < rightbottomx && y > leftupy && y < rightbottomy)
                 {
@@ -161,7 +117,7 @@ namespace ButtonTest
                 {
                     scores -= 5;
                     errorCount++;
-                    msg.Text += "\n" + errorCount + ": 组合位置错误";
+                    msg.Text += "\n" + errorCount + ": 组装位置错误";
                     score.Text = "得分：" + scores;
                 }
 
@@ -197,45 +153,39 @@ namespace ButtonTest
         private unsafe static GraphicsPath subGraphicsPath(Image img)
         {
             if (img == null) return null;
-
-            // 建立GraphicsPath, 给我们的位图路径计算使用   
             GraphicsPath g = new GraphicsPath(FillMode.Alternate);
-
             Bitmap bitmap = new Bitmap(img);
-
             int width = bitmap.Width;
             int height = bitmap.Height;
             BitmapData bmData = bitmap.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
             byte* p = (byte*)bmData.Scan0;
             int offset = bmData.Stride - width * 3;
-            int p0, p1, p2;         // 记录左上角0，0座标的颜色值  
+            int p0, p1, p2;   
             p0 = p[0];
             p1 = p[1];
             p2 = p[2];
 
             int start = -1;
-            // 行座标 ( Y col )   
             for (int Y = 0; Y < height; Y++)
             {
-                // 列座标 ( X row )   
                 for (int X = 0; X < width; X++)
                 {
-                    if (start == -1 && (p[0] != p0 || p[1] != p1 || p[2] != p2))     //如果 之前的点没有不透明 且 不透明   
+                    if (start == -1 && (p[0] != p0 || p[1] != p1 || p[2] != p2))
                     {
-                        start = X;                            //记录这个点  
+                        start = X; 
                     }
-                    else if (start > -1 && (p[0] == p0 && p[1] == p1 && p[2] == p2))      //如果 之前的点是不透明 且 透明  
+                    else if (start > -1 && (p[0] == p0 && p[1] == p1 && p[2] == p2))    
                     {
-                        g.AddRectangle(new Rectangle(start, Y, X - start, 1));    //添加之前的矩形到  
+                        g.AddRectangle(new Rectangle(start, Y, X - start, 1)); 
                         start = -1;
                     }
 
-                    if (X == width - 1 && start > -1)        //如果 之前的点是不透明 且 是最后一个点  
+                    if (X == width - 1 && start > -1)
                     {
-                        g.AddRectangle(new Rectangle(start, Y, X - start + 1, 1));      //添加之前的矩形到  
+                        g.AddRectangle(new Rectangle(start, Y, X - start + 1, 1));
                         start = -1;
                     }
-                    p += 3;                                   //下一个内存地址  
+                    p += 3;  
                 }
                 p += offset;
             }
@@ -313,8 +263,6 @@ namespace ButtonTest
                 btnSlot[i, 0].BackgroundImageLayout = ImageLayout.Stretch;
                 btnSlot[i, 0].MouseDown += new MouseEventHandler(OnMouseDown);
                 btnSlot[i, 0].MouseUp += new MouseEventHandler(OnMouseUp);
-                btnSlot[i, 0].MouseMove += new MouseEventHandler(OnMouseMove);
-
                 if (btnSlot[i, 0].Top + 45 > groupBox2.Top + groupBox2.Height) 
                 {
                     btnSlot[i, 0].Visible = false;
@@ -323,11 +271,6 @@ namespace ButtonTest
 
             time.Visible = false;
             score.Visible = false;
-
-            //
-          
-            
-            //
         }
 
         private static int[] BuildRandomSequence3(int length)
@@ -463,16 +406,6 @@ namespace ButtonTest
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-        
-        }
-
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SvDemo.Form2 form2 = new SvDemo.Form2(xmlFileString,"Add");
@@ -504,16 +437,40 @@ namespace ButtonTest
                 form2.setDataView(xmlViewData);
                 form2.Visible = true;
             }
-           
+
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void ShakeButton(MyButton btn) 
         {
+            int rand = 10;
+            int frmx = btn.Left;
+            int frmy = btn.Top;
+            Random random = new Random();
+            for (int i = 0; i < 1000; i += 5)
+            {
+                int x = random.Next(rand);
+                int y = random.Next(rand);
+                if (x % 2 == 0)
+                {
+                    btn.Left = btn.Left + x;
+                }
+                else
+                {
+                    btn.Left = btn.Left - x;
+                }
+                if (y % 2 == 0)
+                {
+                    btn.Top = btn.Top + y;
+                }
+                else
+                {
+                    btn.Top = btn.Top - y;
+                }
 
+                btn.Left = frmx;
+                btn.Top = frmy;
+            }
         }
-
-     
-      
 
     }
 }
