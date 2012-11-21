@@ -49,3 +49,5 @@ C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.Form2
 C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.Form3.resources
 C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.Properties.Resources.resources
 C:\Documents and Settings\Administrator\桌面\ButtonTest\obj\Debug\SvDemo.csproj.GenerateResource.Cache
+D:\3DPlay\obj\Debug\SvDemo.exe
+D:\3DPlay\obj\Debug\SvDemo.pdb
