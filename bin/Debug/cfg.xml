@@ -2,9 +2,9 @@
 <procedures number="6">
   <procedure name="卡爪装入">
     <id>1</id>
-    <image>A.bmp</image>
-    <button>A.png</button>
-    <video>A.swf</video>
+    <image>image\pic\A.bmp</image>
+    <button>image\button\A.png</button>
+    <video>flash\A.swf</video>
     <leftupx>159</leftupx>
     <leftupy>193</leftupy>
     <rightbottomx>317</rightbottomx>
@@ -12,9 +12,9 @@
   </procedure>
   <procedure name="螺杆旋入">
     <id>2</id>
-    <image>B.bmp</image>
-    <button>B.png</button>
-    <video>B.swf</video>
+    <image>image\pic\B.bmp</image>
+    <button>image\button\B.png</button>
+    <video>flash\B.swf</video>
     <leftupx>272</leftupx>
     <leftupy>274</leftupy>
     <rightbottomx>445</rightbottomx>
@@ -22,9 +22,9 @@
   </procedure>
   <procedure name="垫铁装入">
     <id>3</id>
-    <image>C.bmp</image>
-    <button>C.png</button>
-    <video>C.swf</video>
+    <image>image\pic\C.bmp</image>
+    <button>image\button\C.png</button>
+    <video>flash\C.swf</video>
     <leftupx>267</leftupx>
     <leftupy>265</leftupy>
     <rightbottomx>428</rightbottomx>
@@ -32,9 +32,9 @@
   </procedure>
   <procedure name="紧定螺钉旋入">
     <id>4</id>
-    <image>D.bmp</image>
-    <button>D.png</button>
-    <video>D.swf</video>
+    <image>image\pic\D.bmp</image>
+    <button>image\button\D.png</button>
+    <video>flash\D.swf</video>
     <leftupx>235</leftupx>
     <leftupy>308</leftupy>
     <rightbottomx>359</rightbottomx>
@@ -42,9 +42,9 @@
   </procedure>
   <procedure name="盖板装入">
     <id>5</id>
-    <image>E.bmp</image>
-    <button>E.png</button>
-    <video>E.swf</video>
+    <image>image\pic\E.bmp</image>
+    <button>image\button\E.png</button>
+    <video>flash\E.swf</video>
     <leftupx>235</leftupx>
     <leftupy>176</leftupy>
     <rightbottomx>438</rightbottomx>
@@ -52,9 +52,9 @@
   </procedure>
   <procedure name="螺钉旋入">
     <id>6</id>
-    <image>F.bmp</image>
-    <button>F.png</button>
-    <video>F.swf</video>
+    <image>image\pic\F.bmp</image>
+    <button>image\button\F.png</button>
+    <video>flash\F.swf</video>
     <leftupx>259</leftupx>
     <leftupy>173</leftupy>
     <rightbottomx>446</rightbottomx>

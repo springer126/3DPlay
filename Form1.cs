@@ -12,6 +12,7 @@ using System.Threading;
 using System.Xml;
 using SvDemo;
 
+
 namespace ButtonTest
 {
     public partial class Form1 : Form
@@ -23,7 +24,6 @@ namespace ButtonTest
         protected Point btnOrigin;
         MyButton[,] btnSlot;
         int order = 0;
-        int btn_order;
         public static int number_pres;
         int seconds = 0;
         int scores = 0;
@@ -48,14 +48,11 @@ namespace ButtonTest
             if (errorCount < 5)
             {
                 MyButton bt = sender as MyButton;
-                //ShakeButton(bt);
                 btnStart = Cursor.Position;
                 btnOrigin = bt.Location;
                 bMouseDown = true;
-                btn_order = (int)(bt.Name[0] - 'A');
-
                 axShockwaveFlash1.SendToBack();
-                pictureBox1.BackgroundImage = new Bitmap(Application.StartupPath + "\\image\\pic\\" + bt.Name + ".bmp");
+                pictureBox1.BackgroundImage = new Bitmap(Application.StartupPath + "\\" + xmlViewData[Convert.ToInt32(bt.Tag)]["image"].ToString());
                 pictureBox1.SendToBack();
                 while (e.Button == MouseButtons.Left && bMouseDown)
                 {
@@ -63,13 +60,6 @@ namespace ButtonTest
                     ControlTrans(bt, bt.BackgroundImage);
                     int left  = Cursor.Position.X - this.Location.X - 60;
                     int top = Cursor.Position.Y - this.Location.Y - 60;
-                    //if (left > axShockwaveFlash1.Left && top > axShockwaveFlash1.Top &&
-                    //    left < axShockwaveFlash1.Left + axShockwaveFlash1.Width &&
-                    //    top < axShockwaveFlash1.Top + axShockwaveFlash1.Height) 
-                    //{
-                    //    bt.Size = new Size(120,90);
-                    //    bt.Refresh();
-                    //}
                     bt.Location = new Point(left,top);
                     Application.DoEvents();
                 }
@@ -85,11 +75,11 @@ namespace ButtonTest
 
         private void OnMouseUp(object sender, MouseEventArgs e)
         {
+            MyButton btn = sender as MyButton;
+            int btn_order = Convert.ToInt32(btn.Tag);
             if (errorCount < 5) 
             {
                 bMouseDown = false;
-
-                MyButton btn = sender as MyButton;
                 Point pos = btn.Location;
                 int x = pos.X + 28;
                 int y = pos.Y + 18;
@@ -98,7 +88,6 @@ namespace ButtonTest
                 int rightbottomx = Convert.ToInt32(xmlViewData[btn_order]["rightbottomx"].ToString());
                 int rightbottomy = Convert.ToInt32(xmlViewData[btn_order]["rightbottomy"].ToString());
                 btn.Location = btnOrigin;
-
                 if (btn_order != this.order)
                 {
                     scores -= 10;
@@ -108,7 +97,7 @@ namespace ButtonTest
                 }
                 else if (x > leftupx && x < rightbottomx && y > leftupy && y < rightbottomy)
                 {
-                    Play(btn.Name);
+                    Play(Application.StartupPath + "\\" + xmlViewData[btn_order]["video"].ToString());
                     scores += 20;
                     score.Text = "得分：" + scores;
                     this.order++;
@@ -138,18 +127,12 @@ namespace ButtonTest
         {
             string path = Application.StartupPath;
             axShockwaveFlash1.Visible = true;
-            this.axShockwaveFlash1.Movie = path + "\\flash\\" + name + ".swf";
+            this.axShockwaveFlash1.Movie = name;
             this.axShockwaveFlash1.Play();
             this.axShockwaveFlash1.Loop = false;
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
         private unsafe static GraphicsPath subGraphicsPath(Image img)
         {
             if (img == null) return null;
@@ -235,29 +218,22 @@ namespace ButtonTest
             }
             this.groupBox2.Refresh();
             
-
             btnSlot = new MyButton[number, 1];
-            char c = 'A';
-            float[] scale = (float[])Tag;
             Size size = new Size(width, height);
-
             for (int i = 0; i < number; i++)
             {
-                char cname = (char)(c + i);
-                string name = System.Convert.ToString(cname);
                 btnSlot[i, 0] = new MyButton();
                 this.groupBox2.Controls.Add(btnSlot[i, 0]);
                 btnSlot[i, 0].AllowDrop = true;
                 btnSlot[i, 0].BackColor = System.Drawing.Color.Transparent;
-                btnSlot[i, 0].BackgroundImage = new Bitmap(Application.StartupPath + "\\image\\button\\" + xmlViewData[i]["button"].ToString());
+                btnSlot[i, 0].BackgroundImage = new Bitmap(Application.StartupPath +"\\"+ xmlViewData[i]["button"].ToString());
                 btnSlot[i, 0].FlatAppearance.BorderColor = System.Drawing.Color.White;
                 btnSlot[i, 0].FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
                 btnSlot[i, 0].FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
                 btnSlot[i, 0].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                 btnSlot[i, 0].Location = new System.Drawing.Point(680, 100 + i * (height + 20));
-                btnSlot[i, 0].Name = name;
                 btnSlot[i, 0].Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-                btnSlot[i, 0].Tag = 100 + i * (height + 20);
+                btnSlot[i, 0].Tag = i;
                 btnSlot[i, 0].Size = size;
                 btnSlot[i, 0].AllowDrop = true;
                 btnSlot[i, 0].BackgroundImageLayout = ImageLayout.Stretch;
@@ -381,9 +357,10 @@ namespace ButtonTest
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (axShockwaveFlash1.FrameNum + 1 == axShockwaveFlash1.TotalFrames && play_order<number_pres)
+            if ((axShockwaveFlash1.FrameNum + 1 == axShockwaveFlash1.TotalFrames)
+                    && play_order<number_pres)
             {
-                this.axShockwaveFlash1.Movie = Application.StartupPath + "\\flash\\" + btnSlot[play_order, 0].Name + ".swf";
+                this.axShockwaveFlash1.Movie = Application.StartupPath + "\\" + xmlViewData[play_order]["video"].ToString();
                 this.axShockwaveFlash1.Play();
                 axShockwaveFlash1.Loop = false;
                 play_order++;
@@ -409,7 +386,7 @@ namespace ButtonTest
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SvDemo.Form2 form2 = new SvDemo.Form2(xmlFileString,"Add");
-            form2.Text = "增加XML文档";
+            form2.Text = "增加配置文档";
             DataSet ds = new DataSet("procedures");
             DataTable dt = new DataTable("procedure");
             dt.Columns.Add(new DataColumn("id", typeof(string)));
@@ -431,9 +408,8 @@ namespace ButtonTest
         {
             if (xmlViewData != null)
             {
-
                 Form2 form2 = new Form2(xmlFileString,"Modify");
-                form2.Text = "修改XML文档";
+                form2.Text = "修改配置文档";
                 form2.setDataView(xmlViewData);
                 form2.Visible = true;
             }
@@ -470,6 +446,17 @@ namespace ButtonTest
                 btn.Left = frmx;
                 btn.Top = frmy;
             }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 f = new Form4();
+            f.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
     }
