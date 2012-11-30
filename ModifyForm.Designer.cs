@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 namespace SvDemo
 {
-    partial class Form4
+    partial class ModifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,13 @@ namespace SvDemo
         private void InitializeComponent()
         {
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.expandablePanel3 = new DevComponents.DotNetBar.ExpandablePanel();
             this.expandablePanel2 = new DevComponents.DotNetBar.ExpandablePanel();
             this.itemPanel1 = new DevComponents.DotNetBar.ItemPanel();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnAddItem = new DevComponents.DotNetBar.ButtonItem();
             this.expandablePanel4 = new DevComponents.DotNetBar.ExpandablePanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancel = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
-            this.reflectionImage1 = new DevComponents.DotNetBar.Controls.ReflectionImage();
             this.integerInput4 = new DevComponents.Editors.IntegerInput();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.integerInput3 = new DevComponents.Editors.IntegerInput();
@@ -62,9 +59,14 @@ namespace SvDemo
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.balloonTip = new DevComponents.DotNetBar.BalloonTip();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.expandablePanel1.SuspendLayout();
             this.expandablePanel2.SuspendLayout();
             this.expandablePanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput2)).BeginInit();
@@ -76,12 +78,11 @@ namespace SvDemo
             this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel1.CollapseDirection = DevComponents.DotNetBar.eCollapseDirection.LeftToRight;
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel1.Controls.Add(this.expandablePanel3);
             this.expandablePanel1.Controls.Add(this.expandablePanel2);
             this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.expandablePanel1.Location = new System.Drawing.Point(0, 0);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(200, 573);
+            this.expandablePanel1.Size = new System.Drawing.Size(200, 568);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -99,52 +100,17 @@ namespace SvDemo
             this.expandablePanel1.TitleStyle.GradientAngle = 90;
             this.expandablePanel1.TitleText = "配置选项";
             // 
-            // expandablePanel3
-            // 
-            this.expandablePanel3.AutoScroll = true;
-            this.expandablePanel3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.expandablePanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expandablePanel3.Location = new System.Drawing.Point(0, 237);
-            this.expandablePanel3.Name = "expandablePanel3";
-            this.expandablePanel3.Size = new System.Drawing.Size(200, 336);
-            this.expandablePanel3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandablePanel3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.expandablePanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.expandablePanel3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandablePanel3.Style.GradientAngle = 90;
-            this.expandablePanel3.StyleMouseDown.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel3.StyleMouseDown.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.expandablePanel3.StyleMouseDown.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
-            this.expandablePanel3.StyleMouseDown.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBorder;
-            this.expandablePanel3.StyleMouseDown.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedText;
-            this.expandablePanel3.StyleMouseOver.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel3.StyleMouseOver.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground;
-            this.expandablePanel3.StyleMouseOver.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground2;
-            this.expandablePanel3.StyleMouseOver.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBorder;
-            this.expandablePanel3.StyleMouseOver.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotText;
-            this.expandablePanel3.TabIndex = 2;
-            this.expandablePanel3.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel3.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel3.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel3.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
-            this.expandablePanel3.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandablePanel3.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.expandablePanel3.TitleStyle.GradientAngle = 90;
-            this.expandablePanel3.TitleText = "添加配置文件";
-            // 
             // expandablePanel2
             // 
             this.expandablePanel2.AutoScroll = true;
             this.expandablePanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.expandablePanel2.Controls.Add(this.itemPanel1);
-            this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expandablePanel2.ExpandButtonVisible = false;
             this.expandablePanel2.Location = new System.Drawing.Point(0, 26);
             this.expandablePanel2.Name = "expandablePanel2";
-            this.expandablePanel2.Size = new System.Drawing.Size(200, 211);
+            this.expandablePanel2.Size = new System.Drawing.Size(200, 542);
             this.expandablePanel2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -160,10 +126,11 @@ namespace SvDemo
             this.expandablePanel2.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel2.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel2.TitleStyle.GradientAngle = 90;
-            this.expandablePanel2.TitleText = "修改配置文件";
+            this.expandablePanel2.TitleText = "步骤列表";
             // 
             // itemPanel1
             // 
+            this.itemPanel1.AutoScroll = true;
             // 
             // 
             // 
@@ -183,39 +150,29 @@ namespace SvDemo
             this.itemPanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.itemPanel1.ContainerControlProcessDialogKey = true;
             this.itemPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemPanel1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem1,
-            this.buttonItem2,
-            this.buttonItem3});
             this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.itemPanel1.Location = new System.Drawing.Point(0, 26);
             this.itemPanel1.Name = "itemPanel1";
-            this.itemPanel1.Size = new System.Drawing.Size(200, 185);
+            this.itemPanel1.Size = new System.Drawing.Size(200, 516);
             this.itemPanel1.TabIndex = 1;
             this.itemPanel1.Text = "itemPanel1";
             // 
-            // buttonItem1
+            // btnAddItem
             // 
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "黑色";
-            // 
-            // buttonItem2
-            // 
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.Text = "蓝色";
-            // 
-            // buttonItem3
-            // 
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.Text = "银色";
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Text = "           增加";
             // 
             // expandablePanel4
             // 
             this.expandablePanel4.CanvasColor = System.Drawing.SystemColors.Control;
             this.expandablePanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.expandablePanel4.Controls.Add(this.labelX13);
+            this.expandablePanel4.Controls.Add(this.labelX12);
+            this.expandablePanel4.Controls.Add(this.labelX10);
+            this.expandablePanel4.Controls.Add(this.labelX11);
+            this.expandablePanel4.Controls.Add(this.pictureBox1);
             this.expandablePanel4.Controls.Add(this.btnCancel);
             this.expandablePanel4.Controls.Add(this.btnSave);
-            this.expandablePanel4.Controls.Add(this.reflectionImage1);
             this.expandablePanel4.Controls.Add(this.integerInput4);
             this.expandablePanel4.Controls.Add(this.labelX9);
             this.expandablePanel4.Controls.Add(this.integerInput3);
@@ -239,7 +196,7 @@ namespace SvDemo
             this.expandablePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expandablePanel4.Location = new System.Drawing.Point(200, 0);
             this.expandablePanel4.Name = "expandablePanel4";
-            this.expandablePanel4.Size = new System.Drawing.Size(555, 573);
+            this.expandablePanel4.Size = new System.Drawing.Size(555, 568);
             this.expandablePanel4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.expandablePanel4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -255,55 +212,42 @@ namespace SvDemo
             this.expandablePanel4.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.expandablePanel4.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.expandablePanel4.TitleStyle.GradientAngle = 90;
-            this.expandablePanel4.TitleText = "编辑框";
+            this.expandablePanel4.TitleText = "编辑项";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 210);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(400, 300);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // btnCancel
             // 
             this.btnCancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnCancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancel.Location = new System.Drawing.Point(263, 529);
+            this.btnCancel.Location = new System.Drawing.Point(250, 529);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 32);
             this.btnCancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancel.TabIndex = 23;
-            this.btnCancel.Text = "修改";
+            this.btnCancel.Text = "取消";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(104, 529);
+            this.btnSave.Location = new System.Drawing.Point(67, 529);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 32);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "保存";
-            // 
-            // reflectionImage1
-            // 
-            // 
-            // 
-            // 
-            this.reflectionImage1.BackgroundStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.reflectionImage1.BackgroundStyle.BorderBottomColor = System.Drawing.SystemColors.ControlText;
-            this.reflectionImage1.BackgroundStyle.BorderBottomWidth = 1;
-            this.reflectionImage1.BackgroundStyle.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.reflectionImage1.BackgroundStyle.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.reflectionImage1.BackgroundStyle.BorderLeftColor = System.Drawing.SystemColors.ControlText;
-            this.reflectionImage1.BackgroundStyle.BorderLeftWidth = 1;
-            this.reflectionImage1.BackgroundStyle.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.reflectionImage1.BackgroundStyle.BorderRightColor = System.Drawing.SystemColors.ControlText;
-            this.reflectionImage1.BackgroundStyle.BorderRightWidth = 1;
-            this.reflectionImage1.BackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.reflectionImage1.BackgroundStyle.BorderTopColor = System.Drawing.SystemColors.ControlText;
-            this.reflectionImage1.BackgroundStyle.BorderTopWidth = 1;
-            this.reflectionImage1.BackgroundStyle.Class = "";
-            this.reflectionImage1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.reflectionImage1.Image = global::SvDemo.Properties.Resources.A;
-            this.reflectionImage1.Location = new System.Drawing.Point(24, 210);
-            this.reflectionImage1.Name = "reflectionImage1";
-            this.reflectionImage1.Size = new System.Drawing.Size(400, 300);
-            this.reflectionImage1.TabIndex = 21;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // integerInput4
             // 
@@ -436,7 +380,6 @@ namespace SvDemo
             this.btnVideo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnVideo.TabIndex = 11;
             this.btnVideo.Text = "浏览……";
-            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
             // 
             // txtVideo
             // 
@@ -468,7 +411,6 @@ namespace SvDemo
             this.btnCtrlImage.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCtrlImage.TabIndex = 8;
             this.btnCtrlImage.Text = "浏览……";
-            this.btnCtrlImage.Click += new System.EventHandler(this.btnCtrlImage_Click);
             // 
             // txtCtrlImage
             // 
@@ -545,23 +487,84 @@ namespace SvDemo
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
-            this.openFileDialog.InitialDirectory = Application.StartupPath;
+            this.openFileDialog.InitialDirectory = "C:\\Program Files\\Microsoft Visual Studio 8\\Common7\\IDE";
             // 
-            // Form4
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX11.ForeColor = System.Drawing.Color.Red;
+            this.labelX11.Location = new System.Drawing.Point(296, 32);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(19, 20);
+            this.labelX11.TabIndex = 30;
+            this.labelX11.Text = "*";
+            // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX10.ForeColor = System.Drawing.Color.Red;
+            this.labelX10.Location = new System.Drawing.Point(296, 63);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(19, 20);
+            this.labelX10.TabIndex = 31;
+            this.labelX10.Text = "*";
+            // 
+            // labelX12
+            // 
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.Class = "";
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX12.ForeColor = System.Drawing.Color.Red;
+            this.labelX12.Location = new System.Drawing.Point(296, 94);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(19, 20);
+            this.labelX12.TabIndex = 30;
+            this.labelX12.Text = "*";
+            // 
+            // labelX13
+            // 
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.Class = "";
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelX13.ForeColor = System.Drawing.Color.Red;
+            this.labelX13.Location = new System.Drawing.Point(296, 125);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(19, 20);
+            this.labelX13.TabIndex = 32;
+            this.labelX13.Text = "*";
+            // 
+            // ModifyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 573);
+            this.ClientSize = new System.Drawing.Size(755, 568);
             this.Controls.Add(this.expandablePanel4);
             this.Controls.Add(this.expandablePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form4";
-            this.Text = "实训系统配置";
-            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Name = "ModifyForm";
+            this.Text = "实训系统-修改配置";
+            this.Load += new System.EventHandler(this.ModifyForm_Load);
             this.expandablePanel1.ResumeLayout(false);
             this.expandablePanel2.ResumeLayout(false);
             this.expandablePanel4.ResumeLayout(false);
             this.expandablePanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput2)).EndInit();
@@ -573,13 +576,9 @@ namespace SvDemo
         #endregion
 
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
-        private DevComponents.DotNetBar.ExpandablePanel expandablePanel3;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel2;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel4;
         private DevComponents.DotNetBar.ItemPanel itemPanel1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem3;
         private DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.TextBox txtProcName;
         private DevComponents.DotNetBar.BalloonTip balloonTip;
@@ -601,10 +600,15 @@ namespace SvDemo
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.Editors.IntegerInput integerInput2;
         private DevComponents.DotNetBar.LabelX labelX7;
-        private DevComponents.DotNetBar.Controls.ReflectionImage reflectionImage1;
         private DevComponents.DotNetBar.ButtonX btnCancel;
         private DevComponents.DotNetBar.ButtonX btnSave;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private DevComponents.DotNetBar.ButtonItem btnAddItem;
+        private PictureBox pictureBox1;
+        private DevComponents.DotNetBar.LabelX labelX13;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.LabelX labelX11;
 
     }
 }

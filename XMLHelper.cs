@@ -6,7 +6,7 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
-namespace ButtonTest
+namespace SvDemo
 {
     class XMLHelper
     {
@@ -64,24 +64,25 @@ namespace ButtonTest
             }
         }
 
-        public int SetProcedureNumber(string XmlPathNode,int num)
+        public bool SetProcedureNumber(string XmlPathNode,int num)
         {
             try
             {
-                objXmlDoc.Load("D:\\cfg.xml");
+                objXmlDoc.Load(strXmlFile);
                 XmlNode node = objXmlDoc.SelectSingleNode(XmlPathNode);
                 XmlAttribute xmlNum = objXmlDoc.CreateAttribute("number");
-                xmlNum.Value = (num-1).ToString();
+                xmlNum.Value = num.ToString();
                 node.Attributes.Append(xmlNum);
                 StringReader read = new StringReader(objXmlDoc.SelectSingleNode(XmlPathNode).OuterXml);
-                ds.Clear();
+                DataSet ds = new DataSet();
                 ds.ReadXml(read);
-                return 1;
+                ds.WriteXml(strXmlFile);
+                return true;
             }
             catch (System.Exception e)
             {
                 MessageBox.Show(e.Message);
-                return 0;
+                return false;
             }
         }
 
@@ -91,11 +92,13 @@ namespace ButtonTest
             try
             {
                 StringReader read = new StringReader(objXmlDoc.SelectSingleNode(XmlPathNode).OuterXml);
+                ds.Clear();
                 ds.ReadXml(read);
-                return ds.Tables[1].DefaultView;
+               return ds.Tables[1].DefaultView;
             }
-            catch
+            catch (System.Exception e)
             {
+                MessageBox.Show(e.Message);
                 return null;
             }
         }

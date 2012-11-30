@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using SvDemo;
 
-namespace ButtonTest
+namespace SvDemo
 {
     static class Program
     {
@@ -14,7 +15,7 @@ namespace ButtonTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new NewForm());
         }
     }
 }
