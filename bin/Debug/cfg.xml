@@ -5,20 +5,20 @@
     <image>image\pic\A.bmp</image>
     <button>image\button\A.png</button>
     <video>flash\A.swf</video>
-    <leftupx>159</leftupx>
-    <leftupy>193</leftupy>
-    <rightbottomx>317</rightbottomx>
-    <rightbottomy>325</rightbottomy>
+    <leftupx>99</leftupx>
+    <leftupy>145</leftupy>
+    <rightbottomx>369</rightbottomx>
+    <rightbottomy>321</rightbottomy>
   </procedure>
   <procedure name="螺杆旋入">
     <id>2</id>
     <image>image\pic\B.bmp</image>
     <button>image\button\B.png</button>
     <video>flash\B.swf</video>
-    <leftupx>272</leftupx>
-    <leftupy>274</leftupy>
-    <rightbottomx>445</rightbottomx>
-    <rightbottomy>421</rightbottomy>
+    <leftupx>241</leftupx>
+    <leftupy>270</leftupy>
+    <rightbottomx>438</rightbottomx>
+    <rightbottomy>414</rightbottomy>
   </procedure>
   <procedure name="垫铁装入">
     <id>3</id>
